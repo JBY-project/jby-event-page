@@ -1,0 +1,185 @@
+/* JBY unified Leaflet map styles — based on html_maket/JBY-Office-Page */
+
+#jb_body .leaflet-container {
+  border-radius: 2px;
+  font-family: "Myriad Pro", sans-serif;
+  background: #e9eef2;
+  cursor: grab;
+}
+
+#jb_body .leaflet-container:active {
+  cursor: grabbing;
+}
+
+#jb_body .leaflet-divicon,
+#jb_body .jby-divicon {
+  background: none;
+  border: 0;
+}
+
+/* Office markers (locations index, office detail, service) */
+#jb_body .jby-marker {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--navy, #41647b);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#jb_body .jby-marker:hover {
+  transform: scale(1.25);
+}
+
+#jb_body .jby-marker.current {
+  width: 22px;
+  height: 22px;
+  background: var(--sand, #c4a882);
+  border-color: #fff;
+  z-index: 2;
+}
+
+#jb_body .jby-marker.current::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--sand, #c4a882);
+  opacity: 0.55;
+  animation: jbyMapPulse 2.2s ease-out infinite;
+}
+
+#jb_body .jby-marker.on {
+  width: 22px;
+  height: 22px;
+  margin: -3px;
+  background: var(--navy, #41647b);
+  border-color: #fff;
+  z-index: 1000;
+}
+
+#jb_body .jby-marker.on::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--navy, #41647b);
+  opacity: 0.4;
+  animation: jbyMapPulse 2.2s ease-out infinite;
+}
+
+@keyframes jbyMapPulse {
+  0% { transform: scale(0.7); opacity: 0.6; }
+  70% { opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Visit-us teardrop pins (home V1/V2 multi-location) */
+#jb_body .leaflet-pin {
+  background: transparent;
+  border: 0;
+  color: var(--navy, #41647b);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+  transition: filter 0.25s, transform 0.25s;
+  transform-origin: 50% 100%;
+}
+
+#jb_body .leaflet-pin.maritime {
+  color: var(--sand, #c4a882);
+}
+
+#jb_body .leaflet-pin svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#jb_body .leaflet-pin:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
+/* Popups */
+#jb_body .leaflet-popup-content-wrapper {
+  border-radius: 2px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+#jb_body .leaflet-popup-content {
+  margin: 16px 18px;
+  font-family: "Myriad Pro", sans-serif;
+}
+
+#jb_body .leaflet-container a.leaflet-popup-close-button {
+  color: var(--mute, #575760);
+  font-size: 18px;
+  padding: 6px 8px 0 0;
+}
+
+#jb_body .jby-pop .jp-type,
+#jb_body .home-visit-us-popup strong {
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sand, #c4a882);
+  margin: 0 0 4px;
+  display: block;
+}
+
+#jb_body .jby-pop .jp-name {
+  font-family: "Mesmerize", "Mesmerize-ex-lt", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: var(--ink, #111);
+  margin: 0 0 8px;
+}
+
+#jb_body .jby-pop .jp-addr,
+#jb_body .home-visit-us-popup {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--mute, #575760);
+}
+
+#jb_body .home-visit-us-popup strong {
+  font-family: "Mesmerize", "Mesmerize-ex-lt", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink, #111);
+  letter-spacing: 0;
+}
+
+#jb_body .jby-pop .jp-addr {
+  margin: 0;
+}
+
+/* Zoom controls */
+#jb_body .leaflet-bar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  border: 0;
+}
+
+#jb_body .leaflet-bar a {
+  border-radius: 0;
+  color: var(--ink, #111);
+  border-bottom-color: var(--line, rgba(0, 0, 0, 0.12));
+}
+
+#jb_body .leaflet-bar a:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+#jb_body .leaflet-bar a:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}

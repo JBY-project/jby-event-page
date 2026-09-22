@@ -1,0 +1,67 @@
+/* Additions to the event page, kept out of the 9,000-line site stylesheet so
+   whoever carries them to the real codebase has one file to read. */
+
+/* ---- Cover photograph -------------------------------------------------- */
+/* Above the title inside the content column, so on a desktop it is as wide as
+   that column and on a phone — where this layout already stacks below 1199px —
+   it is the full content width.
+   Two ratios, both off the reference: a wide 4:1 band on a desktop, and a
+   taller 16:9 crop on a phone, where a 4:1 strip would be 90px of nothing.
+   Cropped rather than letterboxed, so a supplied cover can be any shape. */
+#jb_body.page-event .event-detail__cover {
+  margin: 0 0 32px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #eceff1;
+}
+
+#jb_body.page-event .event-detail__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+  #jb_body.page-event .event-detail__cover {
+    margin-bottom: 24px;
+  }
+
+  #jb_body.page-event .event-detail__cover img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---- Schedule ---------------------------------------------------------- */
+/* Left as the page had it — a flex row per line, the dash written at the end
+   of the date — because sharing one grid across the rows and lifting the dash
+   into its own column was tried and taken back out.
+
+   The day of the week steps back from the date it belongs to: #575760 is the
+   secondary ink this site uses everywhere else. Regular, pinned rather than
+   inherited. */
+#jb_body.page-event .event-detail__schedule-day {
+  font-family: "Myriad-Pro-Regular";
+  font-weight: normal;
+  color: #575760;
+}
+
+/* ---- Header on a phone ------------------------------------------------- */
+/* The page scrolls sideways on a phone, and it is the header doing it: at
+   390px the document is 477 wide because "Contact an Expert" is a 289px button
+   sitting beside the burger, the logo and the search. Nothing in the site's
+   own stylesheet takes it away — its `max-width:980px` block shrinks the bar
+   and the logo and leaves the button at full size — so 87px hang off the right
+   and every section reads as though it stops short of the screen.
+   Hidden from 980px down, which is the same breakpoint that block uses and
+   below where the menu is already a burger. Nothing is lost: the mobile menu
+   carries its own contact button.
+   This one is a fault in the live page, not in the copy — it does the same
+   thing at the same width. */
+@media (max-width: 980px) {
+  #jb_body header.header-v2 .btn-contact-us,
+  #jb_body header.header-v2 .header-home__contact {
+    display: none !important;
+  }
+}

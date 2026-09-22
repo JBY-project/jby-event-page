@@ -1,0 +1,35 @@
+/* Additions to the locations page, kept out of the site's own stylesheets so
+   whoever carries them to the real codebase has one file to read. */
+
+/* ---- Office markers ---------------------------------------------------- */
+/* 24px across in their resting state, where the map drew 16.
+   The negative margin is what keeps a circle centred on its coordinate — the
+   icon box and its anchor are worked out in `jby-leaflet-map.js` from a size
+   of 16 (22 for `current`), and this leaves that script alone. It is the same
+   trick the map's own `.on` rule already uses.
+   The raised states keep a step above it at 32, or hovering a card would make
+   its marker smaller than the ones around it, and their rings move in to
+   match. */
+#jb_body .jby-marker {
+  width: 24px;
+  height: 24px;
+  margin: -4px;
+}
+
+#jb_body .jby-marker.on {
+  width: 32px;
+  height: 32px;
+  margin: -8px;
+}
+
+/* `current` is drawn in a 22px box rather than a 16px one. */
+#jb_body .jby-marker.current {
+  width: 32px;
+  height: 32px;
+  margin: -5px;
+}
+
+#jb_body .jby-marker.current::after,
+#jb_body .jby-marker.on::after {
+  inset: -12px;
+}

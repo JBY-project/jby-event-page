@@ -1,0 +1,754 @@
+/* Local brand fonts: Mesmerize + Myriad Pro */
+/* Mesmerize: each file = its own font-family (Mesmerize-rg, Mesmerize-bd-it, …) */
+
+/* —— Mesmerize Standard width —— */
+
+@font-face {
+  font-family: "Mesmerize-bd-it";
+  src: url("../fonts/mesmerize/mesmerize-bd-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-bd";
+  src: url("../fonts/mesmerize/mesmerize-bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-bk-it";
+  src: url("../fonts/mesmerize/mesmerize-bk-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-bk";
+  src: url("../fonts/mesmerize/mesmerize-bk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-eb-it";
+  src: url("../fonts/mesmerize/mesmerize-eb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-eb";
+  src: url("../fonts/mesmerize/mesmerize-eb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-el-it";
+  src: url("../fonts/mesmerize/mesmerize-el-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-el";
+  src: url("../fonts/mesmerize/mesmerize-el.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-lt-it";
+  src: url("../fonts/mesmerize/mesmerize-lt-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-lt";
+  src: url("../fonts/mesmerize/mesmerize-lt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-rg-it";
+  src: url("../fonts/mesmerize/mesmerize-rg-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-rg";
+  src: url("../fonts/mesmerize/mesmerize-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Mesmerize-sb-it";
+  src: url("../fonts/mesmerize/mesmerize-sb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sb";
+  src: url("../fonts/mesmerize/mesmerize-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ul-it";
+  src: url("../fonts/mesmerize/mesmerize-ul-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ul";
+  src: url("../fonts/mesmerize/mesmerize-ul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* —— Mesmerize Condensed (cd) —— */
+
+@font-face {
+  font-family: "Mesmerize-cd-bd-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-bd-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-bd";
+  src: url("../fonts/mesmerize/mesmerize-cd-bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-bk-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-bk-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-bk";
+  src: url("../fonts/mesmerize/mesmerize-cd-bk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-eb-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-eb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-eb";
+  src: url("../fonts/mesmerize/mesmerize-cd-eb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-el-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-el-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-el";
+  src: url("../fonts/mesmerize/mesmerize-cd-el.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-lt-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-lt-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-lt";
+  src: url("../fonts/mesmerize/mesmerize-cd-lt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-rg-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-rg-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-rg";
+  src: url("../fonts/mesmerize/mesmerize-cd-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-sb-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-sb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-sb";
+  src: url("../fonts/mesmerize/mesmerize-cd-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-ul-it";
+  src: url("../fonts/mesmerize/mesmerize-cd-ul-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-cd-ul";
+  src: url("../fonts/mesmerize/mesmerize-cd-ul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* —— Mesmerize Expanded (ex) —— */
+
+@font-face {
+  font-family: "Mesmerize-ex-bd-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-bd-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-bd";
+  src: url("../fonts/mesmerize/mesmerize-ex-bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-bk-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-bk-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-bk";
+  src: url("../fonts/mesmerize/mesmerize-ex-bk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-eb-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-eb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-eb";
+  src: url("../fonts/mesmerize/mesmerize-ex-eb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-el-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-el-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-el";
+  src: url("../fonts/mesmerize/mesmerize-ex-el.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-lt";
+  src: url("../fonts/mesmerize/mesmerize-ex-lt-.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-lt-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-lt-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-rg-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-rg-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-rg";
+  src: url("../fonts/mesmerize/mesmerize-ex-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex";
+  src: url("../fonts/mesmerize/mesmerize-ex-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-sb-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-sb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-sb";
+  src: url("../fonts/mesmerize/mesmerize-ex-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-ul-it";
+  src: url("../fonts/mesmerize/mesmerize-ex-ul-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-ex-ul";
+  src: url("../fonts/mesmerize/mesmerize-ex-ul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* —— Mesmerize Semi-condensed (sc) —— */
+
+@font-face {
+  font-family: "Mesmerize-sc-bd-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-bd-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-bd";
+  src: url("../fonts/mesmerize/mesmerize-sc-bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-bk-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-bk-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-bk";
+  src: url("../fonts/mesmerize/mesmerize-sc-bk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-eb-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-eb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-eb";
+  src: url("../fonts/mesmerize/mesmerize-sc-eb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-el-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-el-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-el";
+  src: url("../fonts/mesmerize/mesmerize-sc-el.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-lt-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-lt-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-lt";
+  src: url("../fonts/mesmerize/mesmerize-sc-lt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-rg-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-rg-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-rg";
+  src: url("../fonts/mesmerize/mesmerize-sc-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-sb-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-sb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-sb";
+  src: url("../fonts/mesmerize/mesmerize-sc-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-ul-it";
+  src: url("../fonts/mesmerize/mesmerize-sc-ul-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-sc-ul";
+  src: url("../fonts/mesmerize/mesmerize-sc-ul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* —— Mesmerize Semi-expanded (se) —— */
+
+@font-face {
+  font-family: "Mesmerize-se-bd-it";
+  src: url("../fonts/mesmerize/mesmerize-se-bd-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-bd";
+  src: url("../fonts/mesmerize/mesmerize-se-bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-bk-it";
+  src: url("../fonts/mesmerize/mesmerize-se-bk-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-bk";
+  src: url("../fonts/mesmerize/mesmerize-se-bk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-eb-it";
+  src: url("../fonts/mesmerize/mesmerize-se-eb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-eb";
+  src: url("../fonts/mesmerize/mesmerize-se-eb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-el-it";
+  src: url("../fonts/mesmerize/mesmerize-se-el-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-el";
+  src: url("../fonts/mesmerize/mesmerize-se-el.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-lt-it";
+  src: url("../fonts/mesmerize/mesmerize-se-lt-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-lt";
+  src: url("../fonts/mesmerize/mesmerize-se-lt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-rg-it";
+  src: url("../fonts/mesmerize/mesmerize-se-rg-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-rg";
+  src: url("../fonts/mesmerize/mesmerize-se-rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-sb-it";
+  src: url("../fonts/mesmerize/mesmerize-se-sb-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-sb";
+  src: url("../fonts/mesmerize/mesmerize-se-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-ul-it";
+  src: url("../fonts/mesmerize/mesmerize-se-ul-it.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mesmerize-se-ul";
+  src: url("../fonts/mesmerize/mesmerize-se-ul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* —— Myriad Pro —— */
+
+@font-face {
+  font-family: "Myriad-Pro-Bold";
+  src: url("../fonts/myriad_pro/MYRIADPRO-BOLD.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Bold-Condensed";
+  src: url("../fonts/myriad_pro/MYRIADPRO-BOLDCOND.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Bold-Condensed-Italic";
+  src: url("../fonts/myriad_pro/MYRIADPRO-BOLDCONDIT.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Bold-Italic";
+  src: url("../fonts/myriad_pro/MYRIADPRO-BOLDIT.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Condensed";
+  src: url("../fonts/myriad_pro/MYRIADPRO-COND.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Condensed-Italic";
+  src: url("../fonts/myriad_pro/MYRIADPRO-CONDIT.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Light";
+  src: url("../fonts/myriad_pro/MyriadPro-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Regular";
+  src: url("../fonts/myriad_pro/MYRIADPRO-REGULAR.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Semibold";
+  src: url("../fonts/myriad_pro/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad-Pro-Semibold-Italic";
+  src: url("../fonts/myriad_pro/MYRIADPRO-SEMIBOLDIT.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Semantic aliases used in site CSS */
+:root {
+  --font-mesmerize: "Mesmerize-rg";
+  --font-mesmerize-light: "Mesmerize-lt";
+  --font-mesmerize-semibold: "Mesmerize-sb";
+  --font-mesmerize-bold: "Mesmerize-bd";
+  --font-myriad: "Myriad-Pro-Regular";
+  --font-myriad-light: "Myriad-Pro-Light";
+  --font-myriad-semibold: "Myriad-Pro-Semibold";
+  --font-myriad-bold: "Myriad-Pro-Bold";
+}
