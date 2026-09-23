@@ -147,35 +147,23 @@
   font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:11px;line-height:1;
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 
-/* The brands as cards carrying their marks.
-   
-   Navy panels, because all three marks the site holds are white — the Axopar
-   and BRABUS ones from the brand page, Riva's from the model page. On a paper
-   card they would be invisible, and recolouring a brand's mark is not
-   something to do to a brand.
-   
-   One height and a cap on both dimensions of the image, because the three
-   marks are nothing alike in shape: Riva's is five times as wide as it is
-   tall, BRABUS's under two. Containing them to the same box would leave Riva
-   tiny and BRABUS enormous; capping the height and letting the width find
-   itself gives them roughly equal weight on the page. */
+/* The brands, inside the description rather than as a section of their own:
+   a small subtitle and the names in pills.
+
+   The pills carry a light navy wash and no edge, which keeps them apart from
+   the outlined marker beside the title. That one says who the event is for
+   and there is one of it; these are a set, and a set of outlined pills would
+   read as three more of the same thing. */
+#jb_body.page-event .event-brands__label{
+  margin:26px 0 12px;font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:13px;
+  line-height:20px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
 #jb_body.page-event .event-brands{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
-  list-style:none;margin:0;padding:0}
-#jb_body.page-event .event-brands__card{
-  display:flex;align-items:center;justify-content:center;height:96px;padding:16px 20px;
-  background:var(--navy);border-radius:2px}
-#jb_body.page-event .event-brands__card img{
-  max-width:72%;max-height:40px;width:auto;height:auto;object-fit:contain;display:block}
-@media (max-width:760px){
-  #jb_body.page-event .event-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  #jb_body.page-event .event-brands__card{height:82px}
-  #jb_body.page-event .event-brands__card img{max-height:34px}
-}
-@media (max-width:600px){
-  #jb_body.page-event .event-detail__title-row{gap:12px}
-  #jb_body.page-event .event-brands__item{padding:0 14px}
-}
+  display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+#jb_body.page-event .event-brands__pill{
+  display:inline-flex;align-items:center;height:30px;padding:0 14px;
+  background:rgba(65,100,123,0.08);color:var(--navy);border-radius:2px;
+  font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:12px;line-height:1;
+  letter-spacing:.08em;text-transform:uppercase}
 
 /* ---- What vessels will be on display ----------------------------------
    The site's listing card, carried over rather than reinvented: the
