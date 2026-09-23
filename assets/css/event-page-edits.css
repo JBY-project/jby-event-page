@@ -270,3 +270,9 @@
   #jb_body.page-event .event-detail__sidebar{align-self:stretch}
   #jb_body.page-event .event-detail__form-wrap{position:sticky;top:113px}
 }
+
+/* 24px more air between the sections. There are two of them — the
+   description, which now carries the brands at its foot, and the vessels —
+   so this only widens the gap between those, and :last-child still zeroes
+   the one at the bottom. */
+#jb_body.page-event .event-detail__section{margin-bottom:64px}
