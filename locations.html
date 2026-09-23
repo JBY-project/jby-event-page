@@ -201,6 +201,39 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
   .jby-footer .jf-top{right:24px;top:28px;width:40px;height:40px}
 }
 </style>
+<style>
+/* === JBY: the header is blue from the first frame === ===
+   The hero on this page is light and carries no photograph and no video, so a
+   transparent header would be dark type on paper and would then flip to white
+   on blue the moment the page moved. It is the blue from the start instead,
+   the way the locations page has been since it was built.
+
+   Appended after the page's own styles rather than written into its .nav
+   rules, which differ page by page.
+
+   The class is doubled on every selector, and that is not decoration. Every
+   one of these pages carries a `.nav:not(.scrolled){...}` rule — the office
+   page carries eight of them — and :not() counts its argument, so those are
+   (0,2,0) against a plain .nav's (0,1,0). Being later in the file does not
+   help against higher specificity. `.nav.nav` is (0,2,0) and later, which
+   does. Written the way this codebase already writes it, as in
+   `footer .back-top.back-top:hover`.
+
+   .scrolled is left holding the one thing that should still answer the scroll,
+   the padding tightening, which each page already defines. */
+.nav.nav{
+  background:linear-gradient(180deg, rgba(65,100,123,0.82) 0%, rgba(65,100,123,0.92) 100%);
+  backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);
+  border-bottom:0.5px solid rgba(255,255,255,0.15);
+  color:#fff;
+}
+.nav.nav .burger span{background:#fff}
+.nav.nav .logo img{filter:brightness(0) invert(1)}
+.nav.nav .icon{border-color:rgba(255,255,255,0.7);color:#fff;background:transparent}
+.nav.nav .icon:hover{background:rgba(255,255,255,0.14)}
+.nav.nav .cta{color:#fff;border-color:rgba(255,255,255,0.75);background:transparent}
+.nav.nav .cta:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.75)}
+</style>
 </head>
 <body
     id="jb_body"

@@ -74,3 +74,32 @@
     display: none !important;
   }
 }
+
+/* ---- The header is blue from the first frame --------------------------
+   This page's header has two states: white chrome at rest over a light hero,
+   and the navy bar with white contents once the page has scrolled. The client
+   asked for the blue everywhere and from the start, so the resting state is
+   given the scrolled one's colours. Only colour is copied — the resting bar
+   keeps its own 120px height and 24px padding, so nothing jumps when the page
+   moves and the sticky rule takes over.
+
+   Written against the same selectors that set the resting state, one class
+   deeper (header-v2.header-v2 rather than header-v2) so it outranks them, and
+   with !important because every one of those declarations carries it. */
+#jb_body header.header-v2.header-v2.header-v2--flow{color:#fff !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__bar{
+  background:#41647b !important;
+  backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+  border-bottom:0.5px solid rgba(255,255,255,0.15) !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__logo-image{filter:none !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__menu-toggle{color:#fff !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__menu-icon--open span{background:#fff !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__search{
+  color:#fff !important;border-color:rgba(255,255,255,0.7) !important;background:transparent !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__search:hover{background:rgba(255,255,255,0.14) !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .btn-contact-us,
+#jb_body header.header-v2.header-v2.header-v2--flow .header-home__contact{
+  color:#fff !important;border-color:rgba(255,255,255,0.75) !important;background:transparent !important}
+#jb_body header.header-v2.header-v2.header-v2--flow .btn-contact-us:hover,
+#jb_body header.header-v2.header-v2.header-v2--flow .header-home__contact:hover{
+  background:rgba(255,255,255,0.14) !important;color:#fff !important}
