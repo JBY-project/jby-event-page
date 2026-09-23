@@ -54,6 +54,153 @@
   }
 </style>
     <link rel="stylesheet" href="assets/css/custom_yacht_style.css">
+<style>
+/* === JBY SITE BLOCKS: band + footer === */
+/* ==========================================================================
+   The How can we help? band and the footer, as the home page carries them.
+
+   Every class here is prefixed — .jby-band / .jb-* for the band, .jby-footer /
+   .jf-* for the footer — because this block is dropped into thirty-odd pages
+   that each grew their own .help, .expert, .foot-grid and .foot-col. A prefix
+   is the one way to be sure none of that reaches in. The two element
+   selectors that could still reach in, `footer{...}` and `section{...}`, are
+   outranked by naming the element and the class together.
+
+   The tokens are the page's own, with the home page's values as fallbacks, so
+   this works on a page that carries jby-system.css and on one that does not.
+   ========================================================================== */
+
+/* ---- the band ------------------------------------------------------------
+   The shape is the plain band's: 315 tall, centred, 40 of side padding. The
+   photograph and the flat black over it are what the home page added.
+
+   The drift: the image layer is taller than the band and is moved against it
+   on scroll, so the photograph is centred exactly when the band is centred in
+   the window and pans either side of that. The layer is inset -55% top and
+   bottom, more than the furthest extreme reaches, so no edge comes into view.
+   The handler is in the script beside this. */
+section.jby-band{position:relative;overflow:hidden;margin-top:88px;
+  background:var(--navy,#41647b);color:#fff;padding:0 40px;text-align:center;min-height:315px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center}
+.jby-band .jb-bg{position:absolute;inset:-55% 0;z-index:0;will-change:transform}
+.jby-band .jb-bg-inner{position:absolute;inset:0;background-size:cover;background-position:center}
+/* One flat black over the whole band, the same weight top to bottom. */
+.jby-band .jb-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,0.55)}
+.jby-band .jb-body{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+  max-width:820px}
+.jby-band h2{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:20px;line-height:30px;
+  letter-spacing:0;text-transform:uppercase;color:#fff;margin:0 0 12px}
+.jby-band p{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;line-height:24px;
+  color:rgba(255,255,255,0.95);margin:0 0 28px;max-width:640px;font-style:normal}
+/* Rule 4 of jby-system.css: a button standing on a photograph is a veil the
+   image shows through with white type, not a slab. */
+.jby-band .jb-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:10px;
+  height:48px;padding:0 32px;background:var(--jby-veil,rgba(255,255,255,0.28));color:#fff;
+  font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:20px;letter-spacing:0;
+  text-transform:uppercase;border:0;cursor:pointer;transition:background .25s;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.jby-band .jb-btn:hover{background:var(--jby-blue-d,var(--navy-d,#365466))}
+
+/* The rise. Nothing is hidden until the script has said it is running, so a
+   page whose JS never gets there still shows the band rather than three
+   invisible lines. */
+html.jb-rise-ready .jby-band [data-rise]{opacity:0;transform:translate3d(0,24px,0);
+  transition:opacity .7s cubic-bezier(0.22,1,0.36,1),transform .7s cubic-bezier(0.22,1,0.36,1)}
+html.jb-rise-ready .jby-band [data-rise].jb-in{opacity:1;transform:none}
+html.jb-rise-ready .jby-band [data-rise="1"]{transition-delay:.08s}
+html.jb-rise-ready .jby-band [data-rise="2"]{transition-delay:.16s}
+
+@media (max-width:680px){
+  section.jby-band{padding:64px 24px;min-height:0}
+  /* One line, the way the rest of the site sets this title on a phone. */
+  .jby-band h2{white-space:nowrap;font-size:clamp(16px,5.8vw,28px);line-height:1.25}
+  .jby-band .jb-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html.jb-rise-ready .jby-band [data-rise]{opacity:1;transform:none;transition:none}
+}
+
+/* ---- the footer ----------------------------------------------------------
+   On the brand blue: the roundel, two columns of links with Locations and
+   Pages down the left and contact flush right, the legal line, and the white
+   back-to-top. */
+footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
+  color:rgba(255,255,255,0.85);font-size:16px;position:relative;border-top:0}
+.jby-footer .jf-inner{max-width:1440px;margin:0 auto}
+.jby-footer .jf-logo{width:72px;height:72px;border-radius:50%;overflow:hidden;margin:0;
+  background:transparent;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+.jby-footer .jf-logo img{width:100%;height:100%;display:block;object-fit:contain;filter:none}
+/* Locations and Contact are the same heading, so the two columns start on one
+   line. */
+.jby-footer .jf-cols{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;margin-top:38px}
+.jby-footer .jf-contact{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+/* Two faces, as the mockup draws them: the headings in the display face, the
+   rows of links under them in the body one. It is the body face that lets the
+   eight cities sit on a single line — the same string set in Mesmerize is
+   half as wide again, and wraps. */
+.jby-footer .jf-h{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:17px;line-height:26px;
+  letter-spacing:0;text-transform:uppercase;color:#fff;margin:0 0 8px}
+.jby-footer .jf-lists .jf-row{margin-bottom:28px}
+.jby-footer .jf-lists .jf-row:last-child{margin-bottom:0}
+/* One line of links with slashes between them, wrapping as a line of text
+   would. The gap does the spacing on both sides of each slash, so the row
+   stays even however it breaks. */
+.jby-footer .jf-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 9px;
+  font-family:'Myriad Pro',sans-serif;font-weight:400;font-size:15px;line-height:22px;letter-spacing:0.01em;
+  text-transform:uppercase}
+.jby-footer .jf-row a{color:rgba(255,255,255,0.85);text-decoration:none;transition:color .2s}
+.jby-footer .jf-row a:hover{color:#fff}
+.jby-footer .jf-sep{color:rgba(255,255,255,0.4)}
+/* The address and the number are the display face again, a step under the
+   heading. 12px is the floor this site keeps for something meant to be read
+   and tapped. */
+.jby-footer .jf-contact a{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:12px;line-height:24px;
+  letter-spacing:0.02em;text-transform:uppercase;color:#fff;text-decoration:none;transition:color .2s}
+.jby-footer .jf-contact a:hover{color:rgba(255,255,255,0.7)}
+.jby-footer .jf-social{display:flex;gap:12px;margin-top:20px;align-items:center}
+.jby-footer .jf-social a{width:24px;height:24px;color:#fff;display:flex;align-items:center;justify-content:center;
+  transition:opacity .2s}
+.jby-footer .jf-social a svg{width:24px;height:24px;display:block}
+.jby-footer .jf-social a:hover{opacity:0.6}
+/* The legal line, in the body face and dimmer than everything above it — the
+   one row in the footer that is read only when it is looked for. */
+.jby-footer .jf-legal{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-top:32px;
+  font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:14px;line-height:22px;
+  color:rgba(255,255,255,0.65)}
+.jby-footer .jf-legal p{margin:0}
+.jby-footer .jf-legal-links{display:flex;flex-wrap:wrap;gap:6px 12px}
+.jby-footer .jf-legal-links a{color:rgba(255,255,255,0.65);text-decoration:none;transition:color .2s}
+.jby-footer .jf-legal-links a:hover{color:#fff}
+.jby-footer .jf-legal-links .jf-sep{color:rgba(255,255,255,0.35)}
+/* A white tile with a dark chevron, not the veil the rest of the blue carries:
+   it is the one control in the footer and the mockup gives it the contrast.
+   The class is named twice to get above the :is() icon rule in
+   jby-system.css, which would otherwise hover this to the footer's own blue
+   and dissolve it into the background. */
+.jby-footer .jf-top{position:absolute;right:40px;top:48px;width:46px;height:46px;border:0;
+  background:var(--paper,#fcfcfd);border-radius:2px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;color:var(--ink,#2f2f39);
+  transition:background .2s,color .2s}
+.jby-footer .jf-top.jf-top:hover{background:var(--navy-d,#365466);color:#fff}
+.jby-footer .jf-top svg{width:20px;height:20px;display:block;transform:rotate(-90deg)}
+
+/* On a phone the two rows become columns: four items down each, flowing into
+   a second column beside them. The slashes go with the change — they are a
+   device for a line of text, not for a list. */
+@media (max-width:640px){
+  footer.jby-footer{padding:32px 24px 28px}
+  .jby-footer .jf-cols{flex-direction:column;gap:32px}
+  .jby-footer .jf-contact{align-items:flex-start;text-align:left}
+  .jby-footer .jf-row{display:grid;grid-auto-flow:column;grid-template-rows:repeat(4,auto);
+    grid-auto-columns:max-content;gap:10px 28px}
+  .jby-footer .jf-row .jf-sep{display:none}
+  /* 8px between the address and the number. The direct child, so the social
+     marks below are left alone. */
+  .jby-footer .jf-contact > a + a{margin-top:8px}
+  .jby-footer .jf-legal{flex-direction:column;gap:10px}
+  .jby-footer .jf-top{right:24px;top:28px;width:40px;height:40px}
+}
+</style>
 </head>
 <body
     id="jb_body"
@@ -710,111 +857,77 @@
         </div>
     </div>
 
-    <footer class="site-foot">
+    <footer class="jby-footer">
+  <div class="jf-inner">
+    <div class="jf-logo" aria-label="JBY"><img src="assets/img/jby-home-v2/jby_logo.svg" alt=""/></div>
 
-        <section class="expert site-foot__expert" id="contact">
-        <h2>Get Expert Guidance</h2>
-        <p>Tell us what the water means to you. We&#039;ll take it from there.</p>
-        <a class="btn" href="/contact">Book a Consultation</a>
-    </section>
-    
-    <div class="site-foot__main">
-        <div class="foot-grid">
-            <div>
-                <a href="https://jb.apdstack.com" class="foot-logo" aria-label="Jeff Brown Yachts">
-                    <img src="assets/img/jby-home-v2/jby_logo.svg" alt="Jeff Brown Yachts">
-                </a>
-                <nav class="foot-nav" aria-label="Footer">
-                                                                    <a href="/">Home</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/yachts">Portfolio</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/brands">Brands</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/services">Services</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/experiences">Experiences</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/about">About JBY</a>
-                                                                        <span class="sep">/</span>
-                                                <a href="/contact">Contact</a>
-                                    </nav>
-            </div>
+    <div class="jf-cols">
+      <div class="jf-lists">
+        <h5 class="jf-h">Locations</h5>
+        <!-- Every JBY office, each city linking to its Location Detail page. Site-wide. -->
+        <nav class="jf-row" aria-label="Locations">
+          <a href="#">San Diego</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Newport Harbor</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Marina del Rey</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Sausalito</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Seattle</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Kona</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Charleston</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Wrightsville Beach</a>
+        </nav>
+        <h5 class="jf-h">Pages</h5>
+        <nav class="jf-row" aria-label="Pages">
+          <a href="#">Portfolio</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Brands</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Sell your yacht</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Locations</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Services</a>
+          <span class="jf-sep">/</span>
+          <a href="#">Events</a>
+          <span class="jf-sep">/</span>
+          <a href="#">About JBY</a>
+        </nav>
+      </div>
 
-            <div class="foot-col">
-                                    <h6>Contact Us</h6>
-                                            <p><a href="tel:+16192229899">+1 619-222-9899</a></p>
-                                    
-                                    <h6>Email</h6>
-                                            <p><a href="mailto:jeff@jeffbrownyachts.com">jeff@jeffbrownyachts.com</a></p>
-                                    
-                                    <h6>Social Media</h6>
-                    <div class="foot-social">
-                                                    <a
-                                href="#"
-                                aria-label="Instagram"
-                                                            >
-                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.63985 3.13281H16.3198C18.9708 3.13281 21.1198 5.33895 21.1198 8.06035V15.9444C21.1198 18.6658 18.9708 20.8719 16.3198 20.8719H8.63985C5.98888 20.8719 3.83984 18.6658 3.83984 15.9444V8.06035C3.83984 5.33895 5.98888 3.13281 8.63985 3.13281ZM17.0442 8.30519C17.5743 8.30519 18.0041 7.86396 18.0041 7.31967C18.0041 6.7754 17.5743 6.33417 17.0442 6.33417C16.5139 6.33417 16.0841 6.7754 16.0841 7.31967C16.0841 7.86396 16.5139 8.30519 17.0442 8.30519ZM12.4809 7.56761C10.095 7.56761 8.16083 9.55312 8.16083 12.0024C8.16083 14.4517 10.095 16.4372 12.4809 16.4372C14.8667 16.4372 16.8009 14.4517 16.8009 12.0024C16.8034 10.8254 16.3491 9.69588 15.5384 8.86363C14.7276 8.03138 13.6274 7.56498 12.4809 7.56761ZM9.84073 12.0008C9.84073 13.4977 11.0227 14.711 12.4808 14.711C13.9387 14.711 15.1207 13.4977 15.1207 12.0008C15.1207 10.5041 13.9387 9.29069 12.4808 9.29069C11.0227 9.29069 9.84073 10.5041 9.84073 12.0008Z"/></svg>
-                                    </a>
-                                                    <a
-                                href="#"
-                                aria-label="Facebook"
-                                                            >
-                                <svg viewBox="0 0 24 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M21 4.88889V18.1111C21 19.1543 20.1543 20 19.1111 20H15.5694C15.3086 20 15.0973 19.7886 15.0973 19.5277V13.8611H17.3073C17.5317 13.8612 17.7251 13.7032 17.77 13.4833L18.11 11.7833C18.1241 11.7147 18.1068 11.6433 18.0631 11.5885C18.0192 11.5339 17.9534 11.5014 17.8833 11.5H15.0973V8.43056C15.0973 8.30016 15.203 8.19444 15.3333 8.19444H17.6944C17.9553 8.19444 18.1667 7.98303 18.1667 7.72223V6.30556C18.1667 6.04476 17.9553 5.83333 17.6944 5.83333H15.3333C13.7685 5.83333 12.5 7.10186 12.5 8.66667V11.5H11.3383C11.0775 11.5 10.8661 11.7114 10.8661 11.9723V13.3889C10.8661 13.6497 11.0775 13.8611 11.3383 13.8611H12.5V19.5277C12.5 19.7886 12.2886 20 12.0277 20H5.88889C4.84568 20 4 19.1543 4 18.1111V4.88889C4 3.84568 4.84568 3 5.88889 3H19.1111C20.1543 3 21 3.84568 21 4.88889Z"/></svg>
-                                    </a>
-                                                    <a
-                                href="#"
-                                aria-label="Youtube"
-                                                            >
-                                <svg viewBox="0 0 24 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.7425 4.31649L19.1361 4.45716C20.7859 4.64038 22.0248 6.02396 21.9996 7.65505V15.345C22.0248 16.9761 20.7859 18.3596 19.1361 18.5429L17.7997 18.6836C13.6301 19.1055 9.42722 19.1055 5.25749 18.6836L3.86391 18.5429C2.21405 18.3596 0.975134 16.9761 1.00038 15.345V7.65505C0.975134 6.02396 2.21405 4.64038 3.86391 4.45716L5.20022 4.31649C9.36995 3.8945 13.5728 3.8945 17.7425 4.31649ZM10.6505 14.5197L14.3635 12.0815H14.4208C14.6209 11.9534 14.7416 11.7346 14.7416 11.5C14.7416 11.2654 14.6209 11.0466 14.4208 10.9186L10.7078 8.48029C10.4885 8.3347 10.2055 8.31979 9.97165 8.44152C9.73785 8.56325 9.59145 8.80175 9.59097 9.06172V13.9383C9.60329 14.1802 9.74154 14.399 9.95686 14.5172C10.1722 14.6353 10.4343 14.6364 10.6505 14.5197Z"/></svg>
-                                    </a>
-                                                    <a
-                                href="#"
-                                aria-label="Linkedin"
-                                                            >
-                                <i class="fas fa-link" aria-hidden="true"></i>
-                            </a>
-                                            </div>
-                            </div>
-
-            <div class="foot-col">
-                <h6>Locations</h6>
-                <nav class="foot-locs" aria-label="Locations">
-                                            <a href="/locations/san-diego">San Diego</a>
-                                            <a href="/locations/newport-harbor">Newport Harbor</a>
-                                            <a href="/locations/marina-del-rey">Marina del Rey</a>
-                                            <a href="/locations/sausalito">Sausalito</a>
-                                            <a href="/locations/seattle">Seattle</a>
-                                            <a href="/locations/kona">Kona</a>
-                                            <a href="/locations/wrightsville-beach">Wrightsville Beach</a>
-                                            <a href="/locations/charleston">Charleston</a>
-                                    </nav>
-            </div>
+      <div class="jf-contact">
+        <h5 class="jf-h">Contact</h5>
+        <a href="mailto:info@jeffbrownyachts.com">info@jeffbrownyachts.com</a>
+        <!-- The toll-free line, not one of the offices' own numbers -->
+        <a href="tel:+18886938099">(888) 693 - 8099</a>
+        <div class="jf-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.63985 3.13281H16.3198C18.9708 3.13281 21.1198 5.33895 21.1198 8.06035V15.9444C21.1198 18.6658 18.9708 20.8719 16.3198 20.8719H8.63985C5.98888 20.8719 3.83984 18.6658 3.83984 15.9444V8.06035C3.83984 5.33895 5.98888 3.13281 8.63985 3.13281ZM17.0442 8.30519C17.5743 8.30519 18.0041 7.86396 18.0041 7.31967C18.0041 6.7754 17.5743 6.33417 17.0442 6.33417C16.5139 6.33417 16.0841 6.7754 16.0841 7.31967C16.0841 7.86396 16.5139 8.30519 17.0442 8.30519ZM12.4809 7.56761C10.095 7.56761 8.16083 9.55312 8.16083 12.0024C8.16083 14.4517 10.095 16.4372 12.4809 16.4372C14.8667 16.4372 16.8009 14.4517 16.8009 12.0024C16.8034 10.8254 16.3491 9.69588 15.5384 8.86363C14.7276 8.03138 13.6274 7.56498 12.4809 7.56761ZM9.84073 12.0008C9.84073 13.4977 11.0227 14.711 12.4808 14.711C13.9387 14.711 15.1207 13.4977 15.1207 12.0008C15.1207 10.5041 13.9387 9.29069 12.4808 9.29069C11.0227 9.29069 9.84073 10.5041 9.84073 12.0008Z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M21 4.88889V18.1111C21 19.1543 20.1543 20 19.1111 20H15.5694C15.3086 20 15.0973 19.7886 15.0973 19.5277V13.8611H17.3073C17.5317 13.8612 17.7251 13.7032 17.77 13.4833L18.11 11.7833C18.1241 11.7147 18.1068 11.6433 18.0631 11.5885C18.0192 11.5339 17.9534 11.5014 17.8833 11.5H15.0973V8.43056C15.0973 8.30016 15.203 8.19444 15.3333 8.19444H17.6944C17.9553 8.19444 18.1667 7.98303 18.1667 7.72223V6.30556C18.1667 6.04476 17.9553 5.83333 17.6944 5.83333H15.3333C13.7685 5.83333 12.5 7.10186 12.5 8.66667V11.5H11.3383C11.0775 11.5 10.8661 11.7114 10.8661 11.9723V13.3889C10.8661 13.6497 11.0775 13.8611 11.3383 13.8611H12.5V19.5277C12.5 19.7886 12.2886 20 12.0277 20H5.88889C4.84568 20 4 19.1543 4 18.1111V4.88889C4 3.84568 4.84568 3 5.88889 3H19.1111C20.1543 3 21 3.84568 21 4.88889Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.7425 4.31649L19.1361 4.45716C20.7859 4.64038 22.0248 6.02396 21.9996 7.65505V15.345C22.0248 16.9761 20.7859 18.3596 19.1361 18.5429L17.7997 18.6836C13.6301 19.1055 9.42722 19.1055 5.25749 18.6836L3.86391 18.5429C2.21405 18.3596 0.975134 16.9761 1.00038 15.345V7.65505C0.975134 6.02396 2.21405 4.64038 3.86391 4.45716L5.20022 4.31649C9.36995 3.8945 13.5728 3.8945 17.7425 4.31649ZM10.6505 14.5197L14.3635 12.0815H14.4208C14.6209 11.9534 14.7416 11.7346 14.7416 11.5C14.7416 11.2654 14.6209 11.0466 14.4208 10.9186L10.7078 8.48029C10.4885 8.3347 10.2055 8.31979 9.97165 8.44152C9.73785 8.56325 9.59145 8.80175 9.59097 9.06172V13.9383C9.60329 14.1802 9.74154 14.399 9.95686 14.5172C10.1722 14.6353 10.4343 14.6364 10.6505 14.5197Z"/></svg></a>
+          <!-- The mockup's fourth mark is a chain link with no service named on
+               it. Drawn as a link until we are told whose it is. -->
+          <a href="#" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M9.5 13.5a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1.1 1.1"/><path d="M14.5 10.5a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1.1-1.1"/></svg></a>
         </div>
-
-        <div class="foot-legal">
-            <p class="copy">&copy; Jeff Brown Yachts, Inc. All Rights Reserved</p>
-            <nav aria-label="Legal">
-                                    <a href="https://jb.apdstack.com/privacy-policy">Privacy Policy</a>
-                                <span class="sep">|</span>
-                                    <a href="https://jb.apdstack.com/terms-and-conditions">Terms and Conditions</a>
-                                <span class="sep">|</span>
-                                    <a href="https://jb.apdstack.com/statement-of-information">Statement of Information</a>
-                            </nav>
-        </div>
-
-        <button
-            type="button"
-            class="back-top"
-            id="scrollTopBtn"
-            aria-label="Back to top"
-        >
-            <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M13.9842 10.6509L7.7342 16.9009C7.67613 16.9589 7.60719 17.005 7.53132 17.0364C7.45545 17.0679 7.37414 17.084 7.29201 17.084C7.20989 17.084 7.12857 17.0679 7.0527 17.0364C6.97683 17.005 6.9079 16.9589 6.84983 16.9009C6.79176 16.8428 6.74569 16.7739 6.71427 16.698C6.68284 16.6221 6.66667 16.5408 6.66667 16.4587C6.66667 16.3766 6.68284 16.2952 6.71427 16.2194C6.74569 16.1435 6.79176 16.0746 6.84983 16.0165L12.6584 10.2087L6.84983 4.40087C6.73255 4.28359 6.66667 4.12453 6.66667 3.95868C6.66667 3.79283 6.73255 3.63377 6.84983 3.51649C6.9671 3.39922 7.12616 3.33333 7.29201 3.33333C7.45787 3.33333 7.61693 3.39922 7.7342 3.51649L13.9842 9.76649C14.0423 9.82454 14.0884 9.89347 14.1199 9.96934C14.1513 10.0452 14.1675 10.1265 14.1675 10.2087C14.1675 10.2908 14.1513 10.3721 14.1199 10.448C14.0884 10.5239 14.0423 10.5928 13.9842 10.6509Z"/>
-            </svg>
-        </button>
+      </div>
     </div>
 
+    <div class="jf-legal">
+      <p>&copy; Jeff Brown Yachts, Inc. All Rights Reserved</p>
+      <nav class="jf-legal-links" aria-label="Legal">
+        <a href="#">Privacy Policy</a>
+        <span class="jf-sep">|</span>
+        <a href="#">Terms and Conditions</a>
+        <span class="jf-sep">|</span>
+        <a href="#">Statement of Information</a>
+      </nav>
+    </div>
+  </div>
+  <button class="jf-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M13.9842 10.6509L7.7342 16.9009C7.67613 16.9589 7.60719 17.005 7.53132 17.0364C7.45545 17.0679 7.37414 17.084 7.29201 17.084C7.20989 17.084 7.12857 17.0679 7.0527 17.0364C6.97683 17.005 6.9079 16.9589 6.84983 16.9009C6.79176 16.8428 6.74569 16.7739 6.71427 16.698C6.68284 16.6221 6.66667 16.5408 6.66667 16.4587C6.66667 16.3766 6.68284 16.2952 6.71427 16.2194C6.74569 16.1435 6.79176 16.0746 6.84983 16.0165L12.6584 10.2087L6.84983 4.40087C6.73255 4.28359 6.66667 4.12453 6.66667 3.95868C6.66667 3.79283 6.73255 3.63377 6.84983 3.51649C6.9671 3.39922 7.12616 3.33333 7.29201 3.33333C7.45787 3.33333 7.61693 3.39922 7.7342 3.51649L13.9842 9.76649C14.0423 9.82454 14.0884 9.89347 14.1199 9.96934C14.1513 10.0452 14.1675 10.1265 14.1675 10.2087C14.1675 10.2908 14.1513 10.3721 14.1199 10.448C14.0884 10.5239 14.0423 10.5928 13.9842 10.6509Z"/></svg></button>
 </footer>
 
 <div class="jby-st ce" id="jby-ce" role="dialog" aria-modal="true" aria-labelledby="jby-ce-title">
