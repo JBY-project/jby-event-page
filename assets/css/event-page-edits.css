@@ -148,22 +148,27 @@
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 
 /* The brands, inside the description rather than as a section of their own:
-   a small subtitle and the names in pills.
+   the label on the left and the names beside it, on one line.
+
+   The names are in Myriad, the body face — this page's second typeface — so
+   they read as content rather than as three more small headings. The label
+   stays in the display face, which is what makes it a label.
 
    The pills carry a light navy wash and no edge, which keeps them apart from
    the outlined marker beside the title. That one says who the event is for
    and there is one of it; these are a set, and a set of outlined pills would
    read as three more of the same thing. */
+#jb_body.page-event .event-brands-row{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:26px}
 #jb_body.page-event .event-brands__label{
-  margin:26px 0 12px;font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:13px;
+  margin:0;flex:0 0 auto;font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:13px;
   line-height:20px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
 #jb_body.page-event .event-brands{
   display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 #jb_body.page-event .event-brands__pill{
   display:inline-flex;align-items:center;height:30px;padding:0 14px;
   background:rgba(65,100,123,0.08);color:var(--navy);border-radius:2px;
-  font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:12px;line-height:1;
-  letter-spacing:.08em;text-transform:uppercase}
+  font-family:"Myriad-Pro-Regular";font-size:14px;line-height:1;letter-spacing:0}
 
 /* ---- What vessels will be on display ----------------------------------
    The site's listing card, carried over rather than reinvented: the
@@ -239,4 +244,32 @@
   #jb_body.page-event .ev-card{flex-basis:260px;height:290px}
   #jb_body.page-event .ev-rail-nav.prev{left:2px}
   #jb_body.page-event .ev-rail-nav.next{right:2px}
+}
+
+/* ---- The enquiry panel follows the page -------------------------------
+   Sticky, so it stays in view while the description, the brands and the
+   vessels scroll past it.
+
+   113px from the top: the header is 93px now and 20px keeps the panel off
+   it. The layout is a flex row with align-items:flex-start, which is what
+   lets a sticky child work at all — stretched to the row's height it would
+   have nothing to travel inside.
+
+   The max-height is for a short window. A panel taller than the space below
+   the header would have its foot cut off, and the submit button is at the
+   foot; this way it scrolls within itself instead.
+
+   Only above 1199px. Below that the page stacks the panel under the copy,
+   where there is nothing to stick to. */
+@media (min-width:1200px){
+  /* The column has to be as tall as the row, or there is nowhere to stick.
+     The layout sets align-items:flex-start, so the sidebar was exactly as
+     tall as the panel inside it — 438px against the row's 1177 — and a
+     sticky child with no room to travel simply scrolls away. */
+  #jb_body.page-event .event-detail__sidebar{align-self:stretch}
+  #jb_body.page-event .event-detail__form-wrap{
+    position:sticky;top:113px;
+    max-height:calc(100vh - 133px);overflow-y:auto;
+    scrollbar-width:none;-ms-overflow-style:none}
+  #jb_body.page-event .event-detail__form-wrap::-webkit-scrollbar{display:none}
 }
