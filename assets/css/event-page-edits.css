@@ -103,3 +103,21 @@
 #jb_body header.header-v2.header-v2.header-v2--flow .btn-contact-us:hover,
 #jb_body header.header-v2.header-v2.header-v2--flow .header-home__contact:hover{
   background:rgba(255,255,255,0.14) !important;color:#fff !important}
+
+/* ---- and it stands at its scrolled height ------------------------------
+   The rest of the site now holds the tightened header height from the first
+   frame. This header keeps its own variable rather than padding alone, so the
+   sticky values are mirrored onto the resting state: 92px and 16px padding on
+   a desktop, 74px and 12px below the page's own 980px breakpoint. Read from
+   site-shell-approved.css, where the sticky rules set them.
+
+   One class deeper than the rules it overrides, and !important, because those
+   declarations carry it. */
+#jb_body header.header-v2.header-v2.header-v2--flow{--v2-header-height:92px}
+#jb_body header.header-v2.header-v2.header-v2--flow .header-v2__bar{
+  --v2-header-height:92px;padding:16px 40px !important}
+@media (max-width:980px){
+  #jb_body header.header-v2.header-v2.header-v2--flow{--v2-header-height:74px}
+  #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__bar{
+    --v2-header-height:74px;padding:12px 24px !important}
+}
