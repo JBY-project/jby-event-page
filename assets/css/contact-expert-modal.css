@@ -90,7 +90,7 @@
   line-height: 28px;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--lm-ink);
+  color: var(--navy);
   margin: 0;
 }
 #jb_body #jby-ce .jby-st-tz {
@@ -273,7 +273,7 @@
   font-size: 20px;
   line-height: 28px;
   text-transform: uppercase;
-  color: var(--lm-ink);
+  color: var(--navy);
   margin: 28px 0 0;
 }
 #jb_body #jby-ce .jby-st-done p {

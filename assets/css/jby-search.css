@@ -547,7 +547,7 @@ body.jbs-lock {
   line-height: 28px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--navy);
   margin: 0;
 }
 #jb_body.page-search .sr-secline .s-link {

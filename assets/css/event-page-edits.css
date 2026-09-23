@@ -1,3 +1,12 @@
+/* The brand tokens, at the root.
+   This page never had them: --navy and --navy-d are declared in
+   jby-search.css under `#jbs, #jb_body.page-search`, which is the search
+   overlay and the search results page, not this one. So every `var(--navy)`
+   written into this page's rules resolved to nothing and the declaration was
+   dropped — the section titles stayed black and looked untouched. Declared
+   here, in the page's own edits file, which loads last. */
+:root{ --navy:#41647b; --navy-d:#365466; }
+
 /* Additions to the event page, kept out of the 9,000-line site stylesheet so
    whoever carries them to the real codebase has one file to read. */
 

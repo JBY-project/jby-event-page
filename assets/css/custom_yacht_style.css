@@ -63,9 +63,9 @@
 }
 
 #searchToggle {
-  border: 1px solid #00000066;
+  border: 1px solid rgba(65,100,123,0.4);
   border-radius: 2px;
-  color: #000000CC;
+  color: rgba(65,100,123,0.8);
 }
 #searchToggle input {
   font-family: "Myriad-Pro-Regular";
@@ -80,8 +80,8 @@
 #jb_body header .btn-contact-us {
   font-family: "Mesmerize-ex-lt";
   padding: 8px 24px;
-  color: #000;
-  border: 1px solid #000;
+  color: var(--navy);
+  border: 1px solid var(--navy);
   border-radius: 2px;
   background-color: #fff;
   font-weight: 300;
@@ -9551,7 +9551,7 @@ a.in-person-event-btn {
   line-height: 24px;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #111;
+  color: var(--navy);
   margin: 0;
 }
 
@@ -13237,7 +13237,7 @@ a.in-person-event-btn {
   font-weight: normal;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #000;
+  color: var(--navy);
 }
 
 #jb_body.page-event .event-detail__hero {
@@ -13449,7 +13449,7 @@ a.in-person-event-btn {
   font-weight: normal;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #000;
+  color: var(--navy);
 }
 
 #jb_body.page-event #event-rsvp-form-block form .grid {

@@ -269,24 +269,24 @@ footer.mt-20 {
 }
 
 #jb_body header.header-v2.header-v2--flow .header-v2__search {
-  color: #111 !important;
-  border-color: rgba(0, 0, 0, 0.75) !important;
+  color: var(--navy) !important;
+  border-color: rgba(65,100,123,0.75) !important;
 }
 
 #jb_body header.header-v2.header-v2--flow .header-v2__search:hover {
-  background: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(65,100,123,0.06) !important;
 }
 
 #jb_body header.header-v2.header-v2--flow .btn-contact-us,
 #jb_body header.header-v2.header-v2--flow .header-home__contact {
-  color: #111 !important;
-  border-color: rgba(0, 0, 0, 0.75) !important;
+  color: var(--navy) !important;
+  border-color: rgba(65,100,123,0.75) !important;
 }
 
 #jb_body header.header-v2.header-v2--flow .btn-contact-us:hover,
 #jb_body header.header-v2.header-v2--flow .header-home__contact:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
-  color: #111 !important;
+  background: rgba(65,100,123,0.05) !important;
+  color: var(--navy) !important;
 }
 
 #jb_body header.header-v2.header-v2--flow.header-v2--sticky,
