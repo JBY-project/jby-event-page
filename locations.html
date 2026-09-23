@@ -927,13 +927,14 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
       </nav>
     </div>
   </div>
-  <!-- id="to-top" as well as the class: seven pages carry a script that does
-       document.getElementById('to-top').addEventListener(...)
-  unguarded, and that id lived on the button in the footer this block
-  replaced. Without it those scripts throw, and everything after the throw
-  never runs — on the model page that was the reveal observer, which is why
-  half of it stayed invisible. The inline handler stays for the pages that
-  have no such script; where both are present they do the same thing. -->
+  <!-- id="to-top" as well as the class: a dozen pages carry a script that
+       reaches for document.getElementById('to-top'), and that id lived on the
+  button in the footer this block replaced. Without it those scripts threw and
+  everything after the throw never ran — on the model page that was the reveal
+  observer, the cascade and the map, which is why half the page stayed
+  invisible. Those call sites are guarded now as well, so neither half alone
+  can do it again. The inline handler stays for the pages that have no such
+  script; where both are present they do the same thing. -->
   <button class="jf-top" id="to-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M13.9842 10.6509L7.7342 16.9009C7.67613 16.9589 7.60719 17.005 7.53132 17.0364C7.45545 17.0679 7.37414 17.084 7.29201 17.084C7.20989 17.084 7.12857 17.0679 7.0527 17.0364C6.97683 17.005 6.9079 16.9589 6.84983 16.9009C6.79176 16.8428 6.74569 16.7739 6.71427 16.698C6.68284 16.6221 6.66667 16.5408 6.66667 16.4587C6.66667 16.3766 6.68284 16.2952 6.71427 16.2194C6.74569 16.1435 6.79176 16.0746 6.84983 16.0165L12.6584 10.2087L6.84983 4.40087C6.73255 4.28359 6.66667 4.12453 6.66667 3.95868C6.66667 3.79283 6.73255 3.63377 6.84983 3.51649C6.9671 3.39922 7.12616 3.33333 7.29201 3.33333C7.45787 3.33333 7.61693 3.39922 7.7342 3.51649L13.9842 9.76649C14.0423 9.82454 14.0884 9.89347 14.1199 9.96934C14.1513 10.0452 14.1675 10.1265 14.1675 10.2087C14.1675 10.2908 14.1513 10.3721 14.1199 10.448C14.0884 10.5239 14.0423 10.5928 13.9842 10.6509Z"/></svg></button>
 </footer>
 
