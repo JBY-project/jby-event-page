@@ -619,9 +619,12 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
         <img src="assets/img/event-cover.png" alt="" width="1448" height="1086">
     </figure>
     <div class="event-detail__hero">
-        <h1 id="event-detail-title" class="event-detail__title mesmerize-font">
-            Cannes Yachting Festival
-        </h1>
+        <div class="event-detail__title-row">
+            <h1 id="event-detail-title" class="event-detail__title mesmerize-font">
+                Cannes Yachting Festival
+            </h1>
+            <span class="event-detail__audience">Open to all guests</span>
+        </div>
 
                     <p class="event-detail__address">Vieux Port, Cannes, France</p>
         
@@ -678,6 +681,87 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
                                                                                 <p>This event brings together builders, brokers, and enthusiasts for a full day of sea trials, walkthroughs, and one-on-one consultations. Whether you are comparing models or planning your next upgrade, our specialists will be on hand to answer questions and arrange private viewings.</p>
                                                                                 <p>Spaces are limited. Submit your RSVP to reserve your place and receive event updates, parking details, and the full schedule of presentations.</p>
                                                 </div>
+        </section>
+
+            <section class="event-detail__section" aria-labelledby="event-brands-title">
+            <h2 id="event-brands-title" class="event-detail__section-title mesmerize-font">
+                Brands at this event
+            </h2>
+
+            <ul class="event-brands">
+                <li class="event-brands__item">Riva</li>
+                <li class="event-brands__item">Axopar</li>
+                <li class="event-brands__item">BRABUS</li>
+            </ul>
+        </section>
+
+            <section class="event-detail__section" aria-labelledby="event-vessels-title">
+            <h2 id="event-vessels-title" class="event-detail__section-title mesmerize-font">
+                What vessels will be on display
+            </h2>
+
+            <div class="ev-rail-wrap">
+                <button class="ev-rail-nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="ev-rail" data-ev-rail>
+                    <article class="ev-card">
+                        <div class="ev-card__img" style="background-image:url('assets/img/vessels/03_vessel1_axopar.jpg')"></div>
+                        <div class="ev-card__veil"></div>
+                        <div class="ev-card__brand"><img src="assets/img/vessels/brand_axopar_logo_white.png" alt=""></div>
+                        <div class="ev-card__info">
+                            <span class="ev-card__chip">Cannes, France</span>
+                            <p class="ev-card__name">2024 Axopar 37 XC Cross Cabin</p>
+                            <p class="ev-card__price">Price on request</p>
+                        </div>
+                        <button class="ev-card__cta" type="button" aria-label="View this yacht">
+                            <span class="ev-card__cta-text">View</span>
+                            <span class="ev-card__cta-icon" aria-hidden="true">&rsaquo;</span>
+                        </button>
+                    </article>
+                    <article class="ev-card">
+                        <div class="ev-card__img" style="background-image:url('assets/img/vessels/axopar-29-cabin.jpg')"></div>
+                        <div class="ev-card__veil"></div>
+                        <div class="ev-card__brand"><img src="assets/img/vessels/brand_axopar_logo_white.png" alt=""></div>
+                        <div class="ev-card__info">
+                            <span class="ev-card__chip">Cannes, France</span>
+                            <p class="ev-card__name">2024 Axopar 29 Cabin</p>
+                            <p class="ev-card__price">Price on request</p>
+                        </div>
+                        <button class="ev-card__cta" type="button" aria-label="View this yacht">
+                            <span class="ev-card__cta-text">View</span>
+                            <span class="ev-card__cta-icon" aria-hidden="true">&rsaquo;</span>
+                        </button>
+                    </article>
+                    <article class="ev-card">
+                        <div class="ev-card__img" style="background-image:url('assets/img/vessels/05_vessel3_brabus.jpg')"></div>
+                        <div class="ev-card__veil"></div>
+                        <div class="ev-card__brand"><img src="assets/img/vessels/brand_brabus_raw.png" alt=""></div>
+                        <div class="ev-card__info">
+                            <span class="ev-card__chip">Cannes, France</span>
+                            <p class="ev-card__name">2024 BRABUS Shadow 900 Sun-Top</p>
+                            <p class="ev-card__price">Price on request</p>
+                        </div>
+                        <button class="ev-card__cta" type="button" aria-label="View this yacht">
+                            <span class="ev-card__cta-text">View</span>
+                            <span class="ev-card__cta-icon" aria-hidden="true">&rsaquo;</span>
+                        </button>
+                    </article>
+                    <article class="ev-card">
+                        <div class="ev-card__img" style="background-image:url('assets/img/vessels/riva-aerial.jpg')"></div>
+                        <div class="ev-card__veil"></div>
+                        <div class="ev-card__brand"><img src="assets/img/vessels/riva-logo.png" alt=""></div>
+                        <div class="ev-card__info">
+                            <span class="ev-card__chip">Cannes, France</span>
+                            <p class="ev-card__name">2024 Riva 112&rsquo; Dolcevita Super</p>
+                            <p class="ev-card__price">Price on request</p>
+                        </div>
+                        <button class="ev-card__cta" type="button" aria-label="View this yacht">
+                            <span class="ev-card__cta-text">View</span>
+                            <span class="ev-card__cta-icon" aria-hidden="true">&rsaquo;</span>
+                        </button>
+                    </article>
+                </div>
+                <button class="ev-rail-nav next" type="button" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7.5 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
         </section>
     </div>
                     <aside class="event-detail__sidebar">
@@ -927,7 +1011,7 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
      changes: without it a browser keeps the copy it already has, which is
      why the blue header and the tightened height did not appear on the
      live page although the file itself had shipped. -->
-<link rel="stylesheet" href="assets/css/event-page-edits.css?v=6">
+<link rel="stylesheet" href="assets/css/event-page-edits.css?v=8">
 <script src="assets/js/header-v2-drilldown.js"></script>
 <script src="assets/js/contact-expert-modal.js"></script>
 <script src="assets/js/jby-search.js"></script>
@@ -972,5 +1056,31 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
     <script src="assets/js/share-menu.js"></script>
     <script src="assets/js/yacht-card-hover.js"></script>
     <script src="assets/js/event-page.js"></script>
+
+<script>
+/* The vessels rail — one step is one card plus the gap, read from the first
+   child rather than hard-coded, so it keeps working if the card width changes.
+   Same behaviour the listing page gives its rails. */
+(function(){
+  var wrap=document.querySelector('.ev-rail-wrap'); if(!wrap) return;
+  var rail=wrap.querySelector('[data-ev-rail]'); if(!rail) return;
+  var prev=wrap.querySelector('.ev-rail-nav.prev'), next=wrap.querySelector('.ev-rail-nav.next');
+  function step(){
+    var first=rail.firstElementChild, cs=getComputedStyle(rail);
+    var gap=parseFloat(cs.columnGap||cs.gap)||0;
+    return first ? first.getBoundingClientRect().width+gap : rail.clientWidth*0.8;
+  }
+  function sync(){
+    var max=rail.scrollWidth-rail.clientWidth-2;
+    if(prev) prev.disabled = rail.scrollLeft<=2;
+    if(next) next.disabled = rail.scrollLeft>=max;
+  }
+  if(prev) prev.addEventListener('click',function(){rail.scrollLeft-=step();});
+  if(next) next.addEventListener('click',function(){rail.scrollLeft+=step();});
+  rail.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
+})();
+</script>
 </body>
 </html>
