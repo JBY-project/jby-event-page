@@ -276,3 +276,28 @@
    so this only widens the gap between those, and :last-child still zeroes
    the one at the bottom. */
 #jb_body.page-event .event-detail__section{margin-bottom:64px}
+
+/* ---- The marker moves under the location on a phone --------------------
+   On a wide screen the marker sits on the title's row, at the far end. There
+   is no room for that on a phone, and wrapping put it between the title and
+   the address — which reads as though it belonged to neither.
+
+   It goes under the address instead. The pill lives inside .title-row in the
+   markup and the address is that row's sibling, so the row is dropped to
+   display:contents and its two children join the hero's own column; order
+   then puts them title, address, marker. That keeps one DOM for both
+   layouts rather than a second copy of the pill hidden at each width.
+
+   Spacing as asked: 12px from the title to the location, 20px from the
+   location to the marker. The divider below keeps its own 24px. */
+@media (max-width:760px){
+  #jb_body.page-event .event-detail__hero{display:flex;flex-direction:column;align-items:flex-start}
+  #jb_body.page-event .event-detail__title-row{display:contents}
+  #jb_body.page-event .event-detail__title-row .event-detail__title{order:1;margin:0 0 12px}
+  #jb_body.page-event .event-detail__address{order:2;margin:0}
+  #jb_body.page-event .event-detail__audience{order:3;margin-top:20px}
+  #jb_body.page-event .event-detail__divider{order:4;width:100%}
+  #jb_body.page-event .event-detail__schedule-list{order:5;width:100%}
+  #jb_body.page-event .event-detail__schedule-toggle,
+  #jb_body.page-event [data-event-schedule-toggle]{order:6}
+}
