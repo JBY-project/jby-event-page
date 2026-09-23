@@ -248,28 +248,25 @@
 
 /* ---- The enquiry panel follows the page -------------------------------
    Sticky, so it stays in view while the description, the brands and the
-   vessels scroll past it.
+   vessels scroll past it. 113px from the top: the header is 93px and 20px
+   keeps the panel off it.
 
-   113px from the top: the header is 93px now and 20px keeps the panel off
-   it. The layout is a flex row with align-items:flex-start, which is what
-   lets a sticky child work at all — stretched to the row's height it would
-   have nothing to travel inside.
+   The column has to be as tall as the row, or there is nowhere to stick. The
+   layout sets align-items:flex-start, so the sidebar was exactly as tall as
+   the panel inside it — 438px against the row's 1177 — and a sticky child
+   with no room to travel simply scrolls away.
 
-   The max-height is for a short window. A panel taller than the space below
-   the header would have its foot cut off, and the submit button is at the
-   foot; this way it scrolls within itself instead.
+   Nothing here clips. An earlier version put max-height and overflow-y:auto
+   on this wrapper to protect a short window, and that cut the panel's own
+   shadow off: the panel fills the wrapper exactly, and its shadow is
+   0 4px 32px 4px, all of which falls outside. The height is handled by the
+   query instead — below 600px of window there is no room for a 438px panel
+   under a 93px header, so it simply is not sticky and stays reachable in
+   the flow.
 
-   Only above 1199px. Below that the page stacks the panel under the copy,
-   where there is nothing to stick to. */
-@media (min-width:1200px){
-  /* The column has to be as tall as the row, or there is nowhere to stick.
-     The layout sets align-items:flex-start, so the sidebar was exactly as
-     tall as the panel inside it — 438px against the row's 1177 — and a
-     sticky child with no room to travel simply scrolls away. */
+   Only above 1199px in width, too: below that the page stacks the panel
+   under the copy, where there is nothing to stick to. */
+@media (min-width:1200px) and (min-height:600px){
   #jb_body.page-event .event-detail__sidebar{align-self:stretch}
-  #jb_body.page-event .event-detail__form-wrap{
-    position:sticky;top:113px;
-    max-height:calc(100vh - 133px);overflow-y:auto;
-    scrollbar-width:none;-ms-overflow-style:none}
-  #jb_body.page-event .event-detail__form-wrap::-webkit-scrollbar{display:none}
+  #jb_body.page-event .event-detail__form-wrap{position:sticky;top:113px}
 }
