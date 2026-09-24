@@ -214,7 +214,7 @@
   max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
   filter:drop-shadow(0 2px 12px rgba(0,0,0,0.4))}
 #jb_body.page-event .ev-card__info{
-  position:absolute;left:0;right:0;bottom:0;z-index:3;padding:16px 20px 20px;
+  position:absolute;left:0;right:0;bottom:0;z-index:3;padding:56px 20px 20px;
   background:linear-gradient(179.96deg,rgba(54,84,102,0) 22%,rgba(54,84,102,0.82) 62%,rgba(54,84,102,0.94) 100%);
   backdrop-filter:blur(1px);display:flex;flex-direction:column;gap:10px}
 /* The chip's own values, not the button's: it sits where the navy gradient is
@@ -222,7 +222,7 @@
    blur to read at all. The note in cards.css works this out in full. */
 #jb_body.page-event .ev-card__chip{
   align-self:flex-start;background:linear-gradient(180deg,rgba(255,255,255,0.34),rgba(255,255,255,0.20));
-  -webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);color:#fff;padding:5px 12px 4px;
+  -webkit-backdrop-filter:blur(84px);backdrop-filter:blur(84px);color:#fff;padding:5px 12px 4px;
   font-family:"Mesmerize-ex-lt";font-size:10px;line-height:15px;letter-spacing:0.07em;
   text-transform:uppercase;border-radius:2px}
 #jb_body.page-event .ev-card__name{
