@@ -94,6 +94,15 @@
 #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__logo-image{filter:none !important}
 #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__menu-toggle{color:#fff !important}
 #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__menu-icon--open span{background:#fff !important}
+/* The mark itself, so this header opens with the same burger as every .nav
+   page: 24 square, three 1px bars, space between them. The deployed rule draws
+   it 28 wide with 2px bars and an 8px gap. */
+/* site-shell-approved.css already normalises this mark, to 24 by 20 with
+   !important on every value; the rest of the site draws it 24 square. Same
+   weapon, or the height below does nothing. */
+#jb_body header.header-v2 .header-v2__menu-icon--open{width:24px !important;height:24px !important;
+  gap:0 !important;justify-content:space-between !important}
+#jb_body header.header-v2 .header-v2__menu-icon--open span{height:1px !important}
 #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__search{
   color:#fff !important;border-color:rgba(255,255,255,0.7) !important;background:transparent !important}
 #jb_body header.header-v2.header-v2.header-v2--flow .header-v2__search:hover{background:rgba(255,255,255,0.14) !important}
