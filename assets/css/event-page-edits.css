@@ -206,51 +206,75 @@
 #jb_body.page-event .ev-rail-nav.next{right:-18px}
 #jb_body.page-event .ev-rail-nav svg{width:15px;height:15px}
 
+/* 334 by 390, the size the card is on every rail the site has. It was 300 by
+   320, chosen when the panel held a 15px uppercase name and a 14px price; at
+   the site's 18/28 the two lines and the price no longer fit a 320px card
+   without crowding the photograph out. The column here is 832px wide at 1440,
+   so two of these and the edge of a third show, the same as the office rail. */
 #jb_body.page-event .ev-card{
-  flex:0 0 300px;height:320px;position:relative;border-radius:2px;overflow:hidden;
+  flex:0 0 334px;height:390px;position:relative;border-radius:2px;overflow:hidden;
   cursor:pointer;background:#0a1620;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
 #jb_body.page-event .ev-card__img{
   position:absolute;inset:0;background-size:cover;background-position:center;
   transition:transform 900ms cubic-bezier(0.22,1,0.36,1)}
 #jb_body.page-event .ev-card:hover .ev-card__img{transform:scale(1.07)}
-#jb_body.page-event .ev-card__veil{
-  position:absolute;inset:0;z-index:1;pointer-events:none;
+#jb_body.page-event .ev-card__veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(54,84,102,0.42) 0%,rgba(54,84,102,0) 38%)}
 #jb_body.page-event .ev-card__brand{
-  position:absolute;top:10px;left:50%;transform:translateX(-50%);width:180px;height:58px;z-index:3;
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);width:225px;height:73px;z-index:3;
   display:flex;align-items:center;justify-content:center;pointer-events:none}
 #jb_body.page-event .ev-card__brand img{
   max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
   filter:drop-shadow(0 2px 12px rgba(0,0,0,0.4))}
-#jb_body.page-event .ev-card__info{
-  position:absolute;left:0;right:0;bottom:0;z-index:3;padding:36px 20px 20px;
+/* Bottom info — the navy gradient a step under --navy, per the client's note
+   that the listing gradients should be a darker JBY blue than #41647b. */
+#jb_body.page-event .ev-card__info{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:36px 20px 20px;
   background:linear-gradient(179.96deg,rgba(54,84,102,0) 22%,rgba(54,84,102,0.82) 62%,rgba(54,84,102,0.94) 100%);
-  display:flex;flex-direction:column;gap:10px}
+  display:flex;flex-direction:column;gap:12px}
 /* The chip's own values, not the button's: it sits where the navy gradient is
    still transparent, so it veils open water and needs more white and a heavier
    blur to read at all. The note in cards.css works this out in full. */
-#jb_body.page-event .ev-card__chip{
-  align-self:flex-start;background:linear-gradient(180deg,rgba(255,255,255,0.34),rgba(255,255,255,0.20));
-  -webkit-backdrop-filter:blur(84px);backdrop-filter:blur(84px);color:#fff;padding:5px 12px 4px;
-  font-family:"Mesmerize-ex-lt";font-size:10px;line-height:15px;letter-spacing:0.07em;
-  text-transform:uppercase;border-radius:2px}
-#jb_body.page-event .ev-card__name{
-  margin:0;color:#fff;font-family:"Mesmerize-ex-lt";font-size:15px;line-height:22px;
-  letter-spacing:0;text-transform:uppercase;padding-right:74px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-#jb_body.page-event .ev-card__price{
-  margin:0;color:rgba(255,255,255,0.86);font-family:"Myriad-Pro-Regular";font-size:14px;line-height:20px}
-#jb_body.page-event .ev-card__cta{
-  position:absolute;right:16px;bottom:18px;z-index:4;display:inline-flex;align-items:center;gap:6px;
-  height:30px;padding:0 12px;border:0;border-radius:2px;cursor:pointer;color:#fff;
-  background:rgba(255,255,255,0.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-  font-family:"Mesmerize-ex-lt";font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+#jb_body.page-event .ev-card__chip{align-self:flex-start;
+  background:linear-gradient(180deg,rgba(255,255,255,0.34),rgba(255,255,255,0.20));
+  -webkit-backdrop-filter:blur(84px);backdrop-filter:blur(84px);
+  color:#fff;padding:5px 12px 4px;font-family:"Mesmerize-ex-lt";
+  font-size:10px;line-height:15px;letter-spacing:0.07em;text-transform:uppercase;
+  border-radius:2px;display:inline-block}
+/* Two lines, with the second one reserved whether it is used or not, so the
+   chip and the first line sit level across the rail. 82% keeps the second line
+   clear of the View plate in the corner, and text-wrap:balance evens the two
+   lines rather than filling one and dropping the remainder onto the other. */
+#jb_body.page-event .ev-card__name{font-family:"Myriad-Pro-Light";font-size:18px;line-height:28px;color:#fff;
+  margin:0;text-transform:none;letter-spacing:0;padding-right:0;max-width:82%;min-height:56px;text-wrap:balance;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+/* The panel's gap is 12px between every pair; -12 closes the space under the
+   name entirely, leaving the chip where it is. The price then falls on the
+   name's own 28px line rhythm — the next line of that block rather than a
+   separate thing floating under it. */
+#jb_body.page-event .ev-card__price{font-family:"Myriad-Pro-Light";font-size:18px;line-height:28px;color:#fff;
+  margin:-12px 0 0}
+/* CTA — the "View" plate, at rest, 92 by 36 in the corner. It was a 30px pill
+   with a chevron that slid on hover, which is a state a finger never reaches.
+   The veil and its blur are rule 4 of jby-system.css, which this page does not
+   link, written out. */
+#jb_body.page-event .ev-card__cta{position:absolute;bottom:24px;right:24px;z-index:4;
+  height:36px;width:92px;border-radius:0;color:#fff;
+  font-family:"Mesmerize-ex-lt";font-size:13px;
+  letter-spacing:0;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:0;
+  padding:0 16px;border:0;cursor:pointer;overflow:hidden;white-space:nowrap;
+  background:var(--jby-veil,rgba(255,255,255,0.28));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   transition:background .25s}
+#jb_body.page-event .ev-card__cta-text{opacity:1;max-width:none;overflow:hidden}
 #jb_body.page-event .ev-card__cta:hover{background:rgba(255,255,255,0.44)}
-#jb_body.page-event .ev-card__cta-icon{font-size:15px;line-height:1;transition:transform .35s}
+#jb_body.page-event .ev-card__cta-icon{display:none}
+#jb_body.page-event .ev-card:hover .ev-card__cta{width:92px;padding:0 16px}
 #jb_body.page-event .ev-card__cta:hover .ev-card__cta-icon{transform:translateX(3px)}
 @media (max-width:600px){
-  #jb_body.page-event .ev-card{flex-basis:260px;height:290px}
+  /* The width the card has on a phone everywhere else; the height comes from
+     the touch block at the foot of this sheet. */
+  #jb_body.page-event .ev-card{flex-basis:280px}
   #jb_body.page-event .ev-rail-nav.prev{left:2px}
   #jb_body.page-event .ev-rail-nav.next{right:2px}
 }
@@ -309,4 +333,43 @@
   #jb_body.page-event .event-detail__schedule-list{order:5;width:100%}
   #jb_body.page-event .event-detail__schedule-toggle,
   #jb_body.page-event [data-event-schedule-toggle]{order:6}
+}
+
+/* The View button on the vessel cards, on every device. On a phone it leaves
+   the corner and runs the full width under the price, carrying the label
+   rather than the chevron — there is no hover to widen it there, so a
+   collapsed chevron would be the only thing a tap ever showed. The panel's
+   bottom padding grows by the button's height plus its gap, since the button
+   is positioned against the card and not laid out in the panel's flow, and the
+   name gets the full width back: 82% was reserving the corner the button no
+   longer sits in.
+
+   Nothing on the card answers :hover here. A tap leaves :hover latched on a
+   touch screen, so every rule that listens to it is a state the finger can
+   switch on and not switch off. These repeat the hover selectors verbatim so
+   they win on equal specificity from further down the sheet. */
+@media (hover:none),(pointer:coarse){
+  #jb_body.page-event .ev-card{height:430px}
+  #jb_body.page-event .ev-card__info{padding-bottom:72px}
+  /* Full width means the line fills it, and the reserved second line goes:
+     there is one card in the eye at this width, so there is no row for the
+     names to line up across, and a one-line name was leaving an empty line
+     between itself and the price. */
+  #jb_body.page-event .ev-card__name{max-width:100%;min-height:0;text-wrap:wrap}
+  /* The card growing moves the panel's top edge down the photograph, which
+     lands the city chip on water rather than on sky. The rest is a second
+     veil layer that starts darkening well above the panel's top edge and
+     hands over to the panel's own gradient below it. */
+  #jb_body.page-event .ev-card__veil{background:
+    linear-gradient(180deg,rgba(54,84,102,0.42) 0%,rgba(54,84,102,0) 38%),
+    linear-gradient(180deg,rgba(54,84,102,0) 34%,rgba(54,84,102,0.5) 48%,rgba(54,84,102,0.5) 100%)}
+  #jb_body.page-event .ev-card__cta{left:20px;right:20px;bottom:20px;width:auto;height:36px;padding:0;
+    justify-content:center;transition:none}
+  #jb_body.page-event .ev-card__cta-text{display:inline;opacity:1;max-width:none}
+  #jb_body.page-event .ev-card__cta-icon{display:none}
+  #jb_body.page-event .ev-card:hover .ev-card__img{transform:none}
+  #jb_body.page-event .ev-card:hover .ev-card__cta{width:auto;padding:0}
+  #jb_body.page-event .ev-card__cta:hover{background:var(--jby-veil,rgba(255,255,255,0.28));color:#fff}
+  /* The rail's own chevrons latch the same way. */
+  #jb_body.page-event .ev-rail-nav:hover{background:var(--navy)}
 }
