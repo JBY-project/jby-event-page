@@ -1,12 +1,20 @@
 (function (global) {
     'use strict';
 
-    var TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    // CARTO's light_all basemap now needs an API key, and fails silently: every
+    // tile answers 200 with a picture that says API KEY REQUIRED. Esri's Light
+    // Gray Canvas is the nearest key-free match. Its labels are a separate
+    // layer, so there are two URLs here where there used to be one, and Esri
+    // renders to z16 — maxNativeZoom stops requesting past it and Leaflet
+    // upscales rather than going blank.
+    var TILE_URL = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
     var TILE_OPTS = {
-        subdomains: 'abcd',
+        maxNativeZoom: 16,
         maxZoom: 19,
-        attribution: '&copy; OpenStreetMap &copy; CARTO',
+        attribution: 'Tiles &copy; Esri',
     };
+    var LABEL_URL = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}';
+    var LABEL_OPTS = { maxNativeZoom: 16, maxZoom: 19 };
 
     var DEFAULT_MAP_OPTS = {
         scrollWheelZoom: false,
@@ -22,7 +30,9 @@
         + '</svg>';
 
     function addTileLayer(map) {
-        return L.tileLayer(TILE_URL, TILE_OPTS).addTo(map);
+        var base = L.tileLayer(TILE_URL, TILE_OPTS).addTo(map);
+        L.tileLayer(LABEL_URL, LABEL_OPTS).addTo(map);
+        return base;
     }
 
     function createMap(elementOrId, options) {
@@ -113,6 +123,8 @@
     global.JbyLeafletMap = {
         TILE_URL: TILE_URL,
         TILE_OPTS: TILE_OPTS,
+        LABEL_URL: LABEL_URL,
+        LABEL_OPTS: LABEL_OPTS,
         DEFAULT_MAP_OPTS: DEFAULT_MAP_OPTS,
         addTileLayer: addTileLayer,
         createMap: createMap,
