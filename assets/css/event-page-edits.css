@@ -142,8 +142,11 @@
 /* ---- Who the event is for, and which brands are on it -----------------
    The marker sits on the title's own row and is pushed to the far end of
    the column, so it lines up with the right edge of the copy rather than
-   trailing the words. Same shape as the one on the events list: square,
-   no fill, a quiet navy edge with the type at full strength.
+   trailing the words. Same shape and the same fill as the one on the events
+   list: square, --sand with white type, no edge. Outlined it read as a
+   second, smaller button beside the title; filled it is the one warm thing
+   on the row and plainly not a thing to click. Sand carrying white type is
+   the site's own pairing - the vessel card's location chip is the same.
 
    align-items:flex-start keeps it level with the first line of a title
    that wraps to two, instead of floating to the middle of the block. */
@@ -152,7 +155,7 @@
 #jb_body.page-event .event-detail__title-row .event-detail__title{margin:0}
 #jb_body.page-event .event-detail__audience{
   flex:0 0 auto;display:inline-flex;align-items:center;height:26px;padding:0 11px;
-  background:transparent;color:var(--navy);border:1px solid rgba(65,100,123,0.3);border-radius:2px;
+  background:var(--sand,#bdb19d);color:#fff;border:0;border-radius:2px;
   font-family:"Mesmerize-ex-lt";font-weight:normal;font-size:11px;line-height:1;
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 
@@ -164,9 +167,9 @@
    stays in the display face, which is what makes it a label.
 
    The pills carry a light navy wash and no edge, which keeps them apart from
-   the outlined marker beside the title. That one says who the event is for
-   and there is one of it; these are a set, and a set of outlined pills would
-   read as three more of the same thing. */
+   the sand marker beside the title. That one says who the event is for and
+   there is one of it; these are a set, and a set of sand pills would read as
+   three more of the same thing. */
 #jb_body.page-event .event-brands-row{
   display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:26px}
 #jb_body.page-event .event-brands__label{
