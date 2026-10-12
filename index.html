@@ -17,28 +17,6 @@
 <link rel="preload" href="assets/fonts/mesmerize/mesmerize-rg.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/contact-expert-modal.css">
-<link rel="stylesheet" href="assets/css/jby-intro.css">
-<style>
-  html.jby-intro-lock,html.jby-intro-lock body{overflow:hidden}
-  html.jby-intro-lock .header-nav-root .logo,
-  html.jby-intro-lock .header-v2__logo{opacity:0 !important}
-  html.jby-intro-lock:not(.jby-intro-ready)::before{
-    content:"";position:fixed;inset:0;z-index:10000;background:#41647b;pointer-events:none
-  }
-</style>
-<script>
-(function () {
-  try {
-    if (new URLSearchParams(location.search).has('nointro')) return;
-    document.documentElement.classList.add('jby-intro-lock');
-    setTimeout(function () {
-      document.documentElement.classList.remove('jby-intro-lock', 'jby-intro-ready');
-    }, 20000);
-  } catch (e) {
-    document.documentElement.classList.add('jby-intro-lock');
-  }
-})();
-</script>
 <style>
   #jb_body {
     font-family: "Myriad-Pro-Regular", system-ui, -apple-system, sans-serif;
@@ -275,7 +253,6 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
                     src="assets/img/jby-home-v2/jby_logo.svg"
                     alt="Jeff Brown Yachts"
                     class="header-v2__logo-image"
-                    data-intro-logo
                 >
             </a>
         </div>
@@ -1020,7 +997,6 @@ footer.jby-footer{background:var(--navy,#41647b);padding:36px 40px 32px;
 <script src="assets/js/header-v2-drilldown.js"></script>
 <script src="assets/js/contact-expert-modal.js"></script>
 <script src="assets/js/jby-search.js"></script>
-<script src="assets/js/jby-intro.js"></script>
 
 <script>
 
